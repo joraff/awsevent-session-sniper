@@ -19,14 +19,9 @@ export const SessionSniper = (eventId, token, to) => {
     }
 
     const findSessions = async () => {
-        // return getFavorites(eventId, request)
-        //   .then((favorites) => {
-        //     console.log(JSON.stringify(favorites))
-        //     return favorites
-        //   })
+
         let favorites = await getFavorites(eventId, request)
-        let sessions  = await getMatchingSessions(eventId, favorites, request)
-        let matches   = await findAvailableSessions(sessions)
+        let matches   = await findAvailableSessions(favorites)
 
         if (matches.length > 0) {
             await emailMatches(to, matches)
