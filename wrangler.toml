@@ -1,0 +1,12 @@
+name = "reinforce-sessions"
+main = "src/main.js"
+compatibility_date = "2022-10-31"
+usage_model = "bundled"
+env = { }
+type = "javascript"
+workers_dev = true
+
+[triggers]
+crons = [ "0 * * * *" ]
+
+[vars]
